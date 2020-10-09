@@ -26,6 +26,10 @@
         <th>Telephone</th>
         <td th:text="*{telephone}"></td>
       </tr>
+       <tr>
+        <th>Status</th>
+        <td th:text="*{status == 1 ? 'Ativo' : 'Desativado'}"></td>
+      </tr>
     </table>
   
     <a th:href="@{{id}/edit(id=${owner.id})}" class="btn btn-default">Edit

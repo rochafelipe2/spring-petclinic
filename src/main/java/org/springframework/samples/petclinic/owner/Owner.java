@@ -46,6 +46,11 @@ import org.springframework.samples.petclinic.model.Person;
 @Table(name = "owners")
 public class Owner extends Person {
 
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -254476060086395088L;
+
 	@Column(name = "address")
 	@NotEmpty
 	private String address;
@@ -145,6 +150,21 @@ public class Owner extends Person {
 				.append("id", this.getId()).append("new", this.isNew()).append("lastName", this.getLastName())
 				.append("firstName", this.getFirstName()).append("address", this.address).append("city", this.city)
 				.append("telephone", this.telephone).toString();
+	}
+
+	@Column(name = "status")
+	private int status;
+
+	public int isStatus() {
+		return status;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 }
